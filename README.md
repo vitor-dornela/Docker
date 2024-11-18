@@ -37,10 +37,10 @@ wget -q0- https://get.docker.com |sh
 
 6) Change directory to folder /Docker/
 
-(Tip: click Manage files>Open file share and then upper left Connect>Linux>Script in Azure to get the folder path)
+Azure tip: On CLI, click Manage files>Open file share and then upper left Connect>Linux>Script in Azure to get the folder path)
 
 ```
-cd your_file_path/Docker/
+cd your_folder_path/Docker/
 ```
 
 7) Run docker compose
