@@ -54,9 +54,9 @@ services:
       - "9000:9000"
     restart: always
 
-# portainer user
-# user: admin
-# password: Senhagrande123
+  # portainer user
+  # user: admin
+  # password: Senhagrande123
 
 # Named volumes for data persistence
 volumes:
