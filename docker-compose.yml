@@ -19,7 +19,7 @@ services:
       MYSQL_TCP_PORT: 3306
 
   php:
-    build: .
+    build: . # build the image using the Dockerfile in the current directory
     ports:
       - "8080:80"
       - "443:443"
