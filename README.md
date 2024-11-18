@@ -23,7 +23,9 @@ How to run:
 sudo su – root 
 wget -q0- https://get.docker.com |sh
 ```
-5) Change directory to folder /Docker/ (Click Connect>Linux>Script in Azure to get the folder path)
+5) Change directory to folder /Docker/ 
+
+(Tip: click Manage files>Open file share and then upper left Connect>Linux>Script in Azure to get the folder path)
 ```
 cd your_file_path/Docker/
 ```
@@ -35,7 +37,6 @@ docker compose up -d
 
 | **Service**    | **Host URL**                | **Description**                                    |
 |-----------------|-----------------------------|----------------------------------------------------|
-| **db**         | Internal only (`db` in the network) | MySQL database service used internally by other services. |
 | **php**        | `http://your_public_IP:8080`     | PHP application running on Apache.               |
 | **phpmyadmin** | `http://your_public_IP:8081`     | Web interface for managing the MySQL database.    |
 | **portainer**  | `http://your_public_IP:9000`     | Portainer interface for managing Docker containers. |
