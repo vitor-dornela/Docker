@@ -2,7 +2,7 @@
 
 This repository contains a Docker Compose configuration for a PHP-based application integrated with a MySQL database. It provides a development-ready environment with the following services:
 
-- PHP Application: A PHP application running on Apache, accessible via http://localhost:8080 (HTTP) and https://localhost:443 (HTTPS).
+- PHP Application: A PHP application running on Apache, accessible via <http://localhost:8080> (HTTP) and https://localhost:443 (HTTPS).
 - MySQL Database: A MySQL 5.7 database service for backend data storage, accessible internally within the Docker network.
 - phpMyAdmin: A user-friendly web interface for managing the MySQL database, available at http://localhost:8081.
 - Portainer: A Docker management tool for monitoring and managing containers, accessible at http://localhost:9000.
@@ -11,11 +11,10 @@ The docker-compose.yml orchestrates these services, ensuring seamless networking
 
 ---
 
-## How to run:
+## How to run
 
 1) Create a Linux virtual machine (ex.: Azure)
 2) Create a public IP in your server and open these ports:
-
 
 | **Service**     | **Internal Port** | **Host (Public) Port** | **Protocol** | **Description**                                   |
 |------------------|-------------------|-------------------------|--------------|-------------------------------------------------|
