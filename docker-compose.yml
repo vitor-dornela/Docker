@@ -1,0 +1,58 @@
+version: '3'
+
+networks: 
+  demo-network:
+    driver: bridge
+
+services:
+  db:
+    image: mysql:5.7
+    command: --disable-partition-engine-check
+    volumes:
+      - ./mysql/employees.sql:/docker-entrypoint-initdb.d/employees.sql
+    restart: always
+    networks:
+      - demo-network
+    environment:
+      MYSQL_ROOT_PASSWORD: phprs
+      MYSQL_DATABASE: employees
+      MYSQL_TCP_PORT: 3306
+
+  php:
+    build: .
+    ports:
+      - "8080:80"
+      - "443:443"
+    volumes:
+      - ./php/www:/var/www/html
+    networks:
+      - demo-network
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_HOST=db
+      - MYSQL_ROOT_PASSWORD=phprs
+    networks:
+      - demo-network
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    command: -H unix:///var/run/docker.sock # run portainer using the docker socket
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # mount the docker socket
+      - portainer_data:/data # mount the portainer data to persist configuration and state
+    ports:
+      - "9000:9000"
+    restart: always
+
+# portainer user
+# user: admin
+# password: Senhagrande123
+
+volumes:
+# Named volume to persist Portainer's data
+  portainer_data:
