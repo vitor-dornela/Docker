@@ -10,7 +10,7 @@ services:
     command: --disable-partition-engine-check
     volumes:
       - db_data:/var/lib/mysql
-      - ./mysql/employees.sql:/docker-entrypoint-initdb.d/employees.sql
+      - ./mysql/employees.sql:/docker-entrypoint-initdb.d/employees.sql 
     restart: always
     networks:
       - demo-network
@@ -20,6 +20,8 @@ services:
       MYSQL_TCP_PORT: 3306
 
   php:
+    depends_on:
+      - db
     build: . # build the image using the Dockerfile in the current directory
     ports:
       - "8080:80"
@@ -31,6 +33,8 @@ services:
     restart: always
 
   phpmyadmin:
+    depends_on:
+      - db
     image: phpmyadmin/phpmyadmin
     ports:
       - "8081:80"
