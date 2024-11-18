@@ -36,9 +36,9 @@ docker compose up -d
 | **Service**    | **Host URL**                | **Description**                                    |
 |-----------------|-----------------------------|----------------------------------------------------|
 | **db**         | Internal only (`db` in the network) | MySQL database service used internally by other services. |
-| **php**        | `http://localhost:8080`     | PHP application running on Apache.               |
-| **phpmyadmin** | `http://localhost:8081`     | Web interface for managing the MySQL database.    |
-| **portainer**  | `http://localhost:9000`     | Portainer interface for managing Docker containers. |
+| **php**        | `http://your_public_IP:8080`     | PHP application running on Apache.               |
+| **phpmyadmin** | `http://your_public_IP:8081`     | Web interface for managing the MySQL database.    |
+| **portainer**  | `http://your_public_IP:9000`     | Portainer interface for managing Docker containers. |
 
 
 
