@@ -9,6 +9,7 @@ services:
     image: mysql:5.7
     command: --disable-partition-engine-check
     volumes:
+      - db_data:/var/lib/mysql
       - ./mysql/employees.sql:/docker-entrypoint-initdb.d/employees.sql
     restart: always
     networks:
@@ -53,6 +54,7 @@ services:
 # user: admin
 # password: Senhagrande123
 
+# Named volumes for data persistence
 volumes:
-# Named volume to persist Portainer's data
   portainer_data:
+  db_data:
