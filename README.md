@@ -1,4 +1,4 @@
-# Easy and fast deployment of a PHP Application with MySQL and Management Tools using Docker Compose.
+# Easy and fast deployment of a PHP App using Docker Compose
 
 This repository contains a Docker Compose configuration for a PHP-based application integrated with a MySQL database. It provides a development-ready environment with the following services:
 
